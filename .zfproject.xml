@@ -11,23 +11,10 @@
           <actionMethod actionName="index"/>
         </controllerFile>
         <controllerFile controllerName="Error"/>
-        <controllerFile controllerName="Visiteur">
-          <actionMethod actionName="index"/>
-          <actionMethod actionName="ajouter"/>
-          <actionMethod actionName="modifier"/>
-          <actionMethod actionName="supprimer"/>
-        </controllerFile>
-        <controllerFile controllerName="Tamere">
-          <actionMethod actionName="index"/>
-        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
-      <modelsDirectory>
-        <dbTableDirectory>
-          <dbTableFile dbTableName="Visiteur"/>
-        </dbTableDirectory>
-      </modelsDirectory>
+      <modelsDirectory/>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
       <viewsDirectory>
@@ -37,21 +24,6 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Error">
             <viewScriptFile forActionName="error"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="Visiteur">
-            <viewScriptFile forActionName="index"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="Visiteur">
-            <viewScriptFile forActionName="ajouter"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="Visiteur">
-            <viewScriptFile forActionName="modifier"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="Visiteur">
-            <viewScriptFile forActionName="supprimer"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="Tamere">
-            <viewScriptFile forActionName="index"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
@@ -88,15 +60,6 @@
       <testApplicationDirectory>
         <testApplicationControllerDirectory>
           <testApplicationControllerFile forControllerName="Index"/>
-          <testApplicationControllerFile forControllerName="Visiteur">
-            <testApplicationActionMethod forActionName="index"/>
-            <testApplicationActionMethod forActionName="ajouter"/>
-            <testApplicationActionMethod forActionName="modifier"/>
-            <testApplicationActionMethod forActionName="supprimer"/>
-          </testApplicationControllerFile>
-          <testApplicationControllerFile forControllerName="Tamere">
-            <testApplicationActionMethod forActionName="index"/>
-          </testApplicationControllerFile>
         </testApplicationControllerDirectory>
       </testApplicationDirectory>
       <testLibraryDirectory/>

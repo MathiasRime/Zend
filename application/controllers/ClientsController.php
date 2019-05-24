@@ -16,22 +16,72 @@ class ClientsController extends Zend_Controller_Action
 
     public function ajouterAction()
     {
-        // action body
+        $form = new Application_Form_Client();
+        $form->envoyer->setLabel('Ajouter');
+        $this->view->form = $form;
+        if ($this->getRequest()->isPost()) {
+            $formData = $this->getRequest()->getPost();
+            if ($form->isValid($formData)) {
+                
+                $numcli = $form->getValue('NUM_CLI');
+                $nomcli = $form->getValue('NOM_CLI');
+                $prenomcli = $form->getValue('PRENOM_CLI');
+                $adressecli = $form->getValue('ADRESSE_CLI');
+                $codevillecli = $form->getValue('CODEVILLE_CLI');
+                $telcli = $form->getValue('TEL_CLI');
+                
+                $lesclients = new Application_Model_DbTable_Clients();
+                $lesclients->ajouterClient($numcli, $nomcli, $prenomcli, $adressecli, $codevillecli, $telcli);
+                $this->_helper->redirector('index');
+            } else {
+                $form->populate($formData);
+                    }
+                }    
+            
     }
 
     public function modifierAction()
     {
-        // action body
+        $form = new Application_Form_Client();
+        $form->envoyer->setLabel('Sauvegarder');
+        $this->view->form = $form;
+        if ($this->getRequest()->isPost()) {
+            $formData = $this->getRequest()->getPost();
+            if ($form->isValid($formData)) {
+                $numcli = $form->getValue('NUM_CLI');
+                $nomcli = $form->getValue('NOM_CLI');
+                $prenomcli = $form->getValue('PRENOM_CLI');
+                $adressecli = $form->getValue('ADRESSE_CLI');
+                $codevillecli = $form->getValue('CODEVILLE_CLI');
+                $telcli = $form->getValue('TEL_CLI');
+
+               
+
+                $lesclients = new Application_Model_DbTable_Clients();
+                $lesclients->modifierAppartement($numcli, $nomcli, $prenomcli, $adressecli, $codevillecli, $telcli);
+                $this->_helper->redirector('index');
+            } else {
+                $form->populate($formData);
+            }
+        }
     }
 
     public function supprimerAction()
     {
-        // action body
+         if ($this->getRequest()->isPost()) {
+            $supprimer = $this->getRequest()->getPost('supprimer');
+            if ($supprimer == 'oui') {    // Dans la vue Supprimer de appartement, on verifie si la valeur oui est Ok //
+                $numcli = $this->getRequest()->getPost('NUM_CLI');
+                $lesclients = new Application_Model_DbTable_Appartements();
+                $lesclients->supprimerAppartement($numcli);
+            }
+            $this->_redirect('/clients');
+       
     }
 
 
 }
-
+}
 
 
 
